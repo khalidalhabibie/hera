@@ -10,7 +10,7 @@ import (
 // PublicRoutes func for describe group of public routes.
 func PublicRoutes(a *fiber.App) {
 	// Create routes group.
-	route := a.Group("/api/author")
+	route := a.Group("/api")
 
 	// get active articles
 	route.Get("/article", article.GetArticles) // get list of all books
