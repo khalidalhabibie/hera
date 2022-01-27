@@ -1,12 +1,15 @@
 package database
 
-import "hera/app/queries"
+import (
+	"hera/app/queries/article"
+	// queries "hera/app/queries/article"
+	"hera/app/queries/author"
+)
 
 // Queries struct for collect all app queries.
 type Queries struct {
-	*queries.UserQueries // load queries from User model
-	*queries.ArticleQueries
-	// *queries.BookQueries // load queries from Book model
+	*author.UserQueries // load queries from User model
+	*article.ArticleQueries
 }
 
 // OpenDBConnection func for opening database connection.
@@ -19,8 +22,7 @@ func OpenDBConnection() (*Queries, error) {
 
 	return &Queries{
 		// Set queries from models:
-		UserQueries:    &queries.UserQueries{DB: db},    // from User model
-		ArticleQueries: &queries.ArticleQueries{DB: db}, // from Article model
-		// BookQueries: &queries.BookQueries{DB: db}, // from Book model
+		UserQueries:    &author.UserQueries{DB: db},     // from User model
+		ArticleQueries: &article.ArticleQueries{DB: db}, // from Article model
 	}, nil
 }
