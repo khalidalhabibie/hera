@@ -108,4 +108,5 @@ func TestPrivateRoutes(t *testing.T) {
 		// Verify, if the status code is as expected.
 		assert.Equalf(t, test.expectedCode, resp.StatusCode, test.description)
 	}
+	
 }
