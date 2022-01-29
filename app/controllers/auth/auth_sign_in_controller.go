@@ -6,15 +6,11 @@ import (
 	"hera/pkg/utils"
 	"hera/platform/cache"
 	"hera/platform/database"
-	"log"
 
 	fiber "github.com/gofiber/fiber/v2"
 )
 
 func UserSignIn(c *fiber.Ctx) error {
-
-	log.Println("IP ", c.IP())
-
 	// Create a new user auth struct.
 	signIn := &models.SignIn{}
 
