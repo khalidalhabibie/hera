@@ -10,6 +10,16 @@ import (
 	fiber "github.com/gofiber/fiber/v2"
 )
 
+// UserSignIn method to auth user and return access and refresh tokens.
+// @Description Auth user and return access and refresh token.
+// @Summary auth user and return access and refresh token
+// @Tags Article
+// @Accept json
+// @Produce json
+// @Param username body string true "Author username"
+// @Param password body string true "Author Password"
+// @Success 200 {string} status "ok"
+// @Router /api/sign/in [post]
 func UserSignIn(c *fiber.Ctx) error {
 	// Create a new user auth struct.
 	signIn := &models.SignIn{}
